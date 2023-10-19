@@ -80,7 +80,7 @@
       this.currentFilter = filter;
     },
       fetchProducts() {
-      axios.get('http://localhost:3000/products')
+      axios.get('https://product-management-backend-h7asyc29m-abrsh6266s-projects.vercel.app/products')
         .then(response => {
           this.products = response.data;
         })
@@ -101,7 +101,7 @@
       this.showProductForm = true;
     },
       deleteProduct(productId) {
-      axios.delete(`http://localhost:3000/products/${productId}`)
+      axios.delete(`https://product-management-backend-h7asyc29m-abrsh6266s-projects.vercel.app/products/${productId}`)
         .then(() => {
           this.fetchProducts();
         })
@@ -111,7 +111,7 @@
     },
       saveProduct(productData) {
       if (this.editingProduct.id) {
-        axios.put(`http://localhost:3000/products/${this.editingProduct.id}`, productData)
+        axios.put(`https://product-management-backend-h7asyc29m-abrsh6266s-projects.vercel.app/products/${this.editingProduct.id}`, productData)
           .then(() => {
             this.fetchProducts();
             this.closeProductForm();
@@ -121,7 +121,7 @@
             console.error('Error editing product:', error);
           });
       } else {
-        axios.post('http://localhost:3000/products', productData)
+        axios.post('https://product-management-backend-h7asyc29m-abrsh6266s-projects.vercel.app/products', productData)
           .then(() => {
             this.fetchProducts();
             this.closeProductForm();
